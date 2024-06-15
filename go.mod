@@ -3,7 +3,7 @@ module github.com/xeitf/lamp-grpc
 go 1.18
 
 require (
-	github.com/xeitf/lamp v0.0.0-20240614070539-2de2d6a22f69
+	github.com/xeitf/lamp v0.0.0-20240615160731-a5b49d4e7154
 	google.golang.org/grpc v1.64.0
 )
 
