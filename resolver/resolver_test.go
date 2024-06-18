@@ -9,14 +9,14 @@ import (
 )
 
 func TestXxx(t *testing.T) {
-	close, err := lamp.Init("etcd://127.0.0.1:2379/services")
+	lc, err := lamp.NewClient("etcd://127.0.0.1:2379/services")
 	if err != nil {
 		t.Errorf("lamp.Init: %s", err.Error())
 		return
 	}
-	defer close()
+	defer lc.Close()
 
-	resolver.Register()
+	resolver.Register(lc)
 
 	cc, err := grpc.NewClient("lamp:///user-svr",
 		grpc.WithInsecure(),
