@@ -19,10 +19,10 @@ func (r *Resolver) Watch() (err error) {
 }
 
 // update
-func (r *Resolver) update(addrs []string, closed bool) {
+func (r *Resolver) update(addrs []lamp.Address, closed bool) {
 	var grpcAddrs []resolver.Address
 	for _, addr := range addrs {
-		grpcAddrs = append(grpcAddrs, resolver.Address{Addr: addr})
+		grpcAddrs = append(grpcAddrs, resolver.Address{Addr: addr.Addr})
 	}
 	r.clientConn.UpdateState(resolver.State{Addresses: grpcAddrs})
 }
