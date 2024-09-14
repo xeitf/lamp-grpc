@@ -8,7 +8,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-func TestXxx(t *testing.T) {
+func TestLampGrpc(t *testing.T) {
 	lc, err := lamp.NewClient("etcd://127.0.0.1:2379/services")
 	if err != nil {
 		t.Errorf("lamp.Init: %s", err.Error())
